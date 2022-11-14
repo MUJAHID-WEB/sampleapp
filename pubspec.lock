@@ -106,6 +106,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  curved_navigation_bar:
+    dependency: "direct main"
+    description:
+      name: curved_navigation_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   dots_indicator:
     dependency: "direct main"
     description:
@@ -211,7 +218,7 @@ packages:
       name: flutter_zoom_drawer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.3.1+1"
+    version: "3.0.3"
   font_awesome_flutter:
     dependency: "direct main"
     description:

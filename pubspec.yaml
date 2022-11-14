@@ -58,6 +58,7 @@ dependencies:
   introduction_screen:
   dots_indicator: 
   collection: 
+  curved_navigation_bar: ^1.0.3
 
   # pick image
   image_picker: 
@@ -65,7 +66,7 @@ dependencies:
   # store image
   path_provider: 
   flutter_settings_screens:
-  flutter_zoom_drawer: ^2.1.1
+  flutter_zoom_drawer: ^3.0.3
  
 
 dev_dependencies:

@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,6 +15,7 @@ import 'package:portfolio/widget/appbar_widget.dart';
 import 'package:portfolio/widget/button_widget.dart';
 import 'package:portfolio/widget/numbers_widget.dart';
 import 'package:portfolio/widget/profile_widget.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -129,6 +131,19 @@ class _ProfilePageState extends State<ProfilePage> {
                     ..setEntry(0, 3, 200 * val)
                     ..rotateY((pi / 6) * val),
                   child: Scaffold(
+                    bottomNavigationBar: CurvedNavigationBar(
+                      backgroundColor: Colors.grey.shade900,
+                      color: Colors.grey.shade800,
+                      animationDuration: Duration(milliseconds: 500),
+                      items: <Widget>[
+                        Icon(Icons.home, size: 30),
+                        Icon(Icons.favorite, size: 30),
+                        Icon(Icons.settings, size: 30),
+                      ],
+                      onTap: (index) {
+                        //Handle button tap
+                      },
+                    ),
                     appBar: buildAppBar(context),
                     body: ListView(
                       physics: BouncingScrollPhysics(),
@@ -266,10 +281,77 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget buildUpgradeButton() => ButtonWidget(
         text: 'Follow',
         // onClicked: () {},
+
         onClicked: () {
-          Get.to(() => const LoginPage(),
-              transition: Transition.leftToRightWithFade,
-              duration: const Duration(milliseconds: 900));
+          showModalBottomSheet(
+            isScrollControlled: true,
+            context: context,
+            // color is applied to main screen when modal bottom screen is displayed
+            barrierColor: Colors.transparent,
+            //background color for modal bottom screen
+            backgroundColor: Colors.grey.shade800,
+            //elevates modal bottom screen
+            elevation: 10, //Elevates the snackbar by increasing shadow.
+            // gives rounded corner to modal bottom screen
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            builder: (context) {
+              //A builder for the contents of the sheet
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Wrap(
+                  children: const [
+                    // TextField(
+                    //   keyboardType: TextInputType.name,
+                    //   decoration: InputDecoration(labelText: 'Name'),
+                    // ),
+                    // TextField(
+                    //   keyboardType: TextInputType.number,
+                    //   decoration: InputDecoration(labelText: 'Age'),
+                    // ),
+                    // SizedBox(
+                    //   height: 15,
+                    // ),
+                    // ElevatedButton(onPressed: (){}),
+                    ListTile(
+                      leading: Icon(
+                        Icons.share,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Share',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(
+                        Icons.copy,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Copy Link',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(
+                        Icons.edit,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Edit',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+          // Get.to(() => const LoginPage(),
+          //     transition: Transition.leftToRightWithFade,
+          //     duration: const Duration(milliseconds: 900));
         },
       );
 }

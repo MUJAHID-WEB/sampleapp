@@ -6,6 +6,8 @@ import 'package:portfolio/themes.dart';
 import 'package:portfolio/utils/user_preferences.dart';
 import 'package:get/get.dart';
 
+import 'zoomdrawer/drawer_screen.dart';
+
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
@@ -42,8 +44,8 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           //theme: ThemeProvider.of(context),
           title: MyApp.title,
-          home: SplashScreen(),
-          // home: SlideNav(),
+          //home: SplashScreen(),
+          home: DrawerScreen(),
         ),
       ),
     );
