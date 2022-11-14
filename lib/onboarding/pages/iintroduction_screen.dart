@@ -135,10 +135,10 @@ class IntroScreen extends StatelessWidget {
     await prefs.setBool('ON_BOARDING', false);
     Navigator.of(context).push(
       PageTransition(
-        type: PageTransitionType.rightToLeftPop,
+        type: PageTransitionType.rotate,
         duration: Duration(seconds: 2),
         reverseDuration: Duration(seconds: 3),
-        // alignment: Alignment.topCenter,
+        alignment: Alignment.topCenter,
         child: LoginPage(),
       ),
     );
