@@ -68,7 +68,9 @@ class _ProfilePageState extends State<ProfilePage> {
                                 height: 20.0,
                               ),
                               ListTile(
-                                // onTap: () {},
+                                // onTap: () {
+                                //   Navigator.pop(context);
+                                // },
                                 title: Text(
                                   'Home',
                                   style: TextStyle(color: Colors.white),
@@ -355,3 +357,11 @@ class _ProfilePageState extends State<ProfilePage> {
         },
       );
 }
+
+// class PageRoutes {
+//  static const String home = homePage.routeName;
+//  static const String contact = contactPage.routeName;
+//  static const String event = eventPage.routeName;
+//  static const String profile = profilePage.routeName;
+//  static const String notification = notificationPage.routeName;
+// }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:portfolio/map/home_screen.dart';
+import 'package:portfolio/nav/pages/home_page.dart';
 import 'package:portfolio/splash_screen.dart';
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:portfolio/themes.dart';
@@ -45,8 +46,8 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           //theme: ThemeProvider.of(context),
           title: MyApp.title,
-          home: SplashScreen(),
-          //home: HomeScreen(),
+          // home: SplashScreen(),
+          home: HomePage(),
         ),
       ),
     );
