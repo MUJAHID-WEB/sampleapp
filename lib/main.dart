@@ -45,8 +45,8 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           //theme: ThemeProvider.of(context),
           title: MyApp.title,
-          //home: SplashScreen(),
-          home: HomeScreen(),
+          home: SplashScreen(),
+          //home: HomeScreen(),
         ),
       ),
     );

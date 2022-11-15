@@ -64,7 +64,7 @@ class _SearchPlacesScreenState extends State<SearchPlacesScreen> {
                 borderRadius: BorderRadius.circular(20),
                 borderSide: BorderSide(color: Colors.white))),
         components: [
-          Component(Component.country, "pk"),
+          Component(Component.country, "bgd"),
           Component(Component.country, "usa")
         ]);
 
