@@ -67,6 +67,15 @@ dependencies:
   path_provider: 
   flutter_settings_screens:
   flutter_zoom_drawer: ^3.0.3
+  google_maps_flutter: 
+
+  geolocator: 
+
+  flutter_google_places: 
+
+  awesome_snackbar_content: 
+
+  http: 
  
 
 dev_dependencies:
