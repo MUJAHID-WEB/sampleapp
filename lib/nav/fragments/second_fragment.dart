@@ -34,29 +34,22 @@ class _Challenge03State extends State<Challenge03> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Challenge03',
-          ),
-          actions: [
-            IconButton(
-              // onPressed: () => Navigator.of(context).push(
-              //   MaterialPageRoute(
-              //     builder: (context) => const Challenge04(),
-              //   ),
-              // ),
-              // onPressed: () {
-              //   Navigator.of(context).push(_createRoute());
-              // },
-              onPressed: () {
-                Get.to(() => const Challenge02_01(),
-                    transition: Transition.circularReveal,
-                    duration: Duration(seconds: 2));
-              },
-              icon: Icon(Icons.arrow_forward),
-            ),
-          ],
-        ),
+        // appBar: AppBar(
+        //   title: Text(
+        //     'Challenge03',
+        //   ),
+        //   actions: [
+        //     IconButton(
+
+        //       onPressed: () {
+        //         Get.to(() => const Challenge02_01(),
+        //             transition: Transition.circularReveal,
+        //             duration: Duration(seconds: 2));
+        //       },
+        //       icon: Icon(Icons.arrow_forward),
+        //     ),
+        //   ],
+        // ),
         backgroundColor: Colors.blue[800],
         bottomNavigationBar: BottomNavigationBar(items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),

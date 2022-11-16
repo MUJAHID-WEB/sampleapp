@@ -28,21 +28,21 @@ class _Challenge02_01State extends State<Challenge02_01> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Challenge02',
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Get.to(() => const Challenge03(),
-                  transition: Transition.rightToLeft,
-                  duration: Duration(seconds: 2));
-            },
-            icon: Icon(Icons.arrow_forward),
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     'Challenge02',
+      //   ),
+      //   actions: [
+      //     IconButton(
+      //       onPressed: () {
+      //         Get.to(() => const Challenge03(),
+      //             transition: Transition.rightToLeft,
+      //             duration: Duration(seconds: 2));
+      //       },
+      //       icon: Icon(Icons.arrow_forward),
+      //     ),
+      //   ],
+      // ),
       backgroundColor: Color.fromRGBO(0, 196, 192, 1),
       body: Padding(
         padding: const EdgeInsets.all(25.0),

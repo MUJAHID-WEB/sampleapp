@@ -14,6 +14,8 @@ AppBar buildAppBar(BuildContext context) {
 
   return AppBar(
     backgroundColor: Colors.transparent,
+    //title: Text(''),
+    // title: Text(widget.drawerItems[_selectedDrawerIndex].title),
     elevation: 0,
     actions: [
       // IconButton(

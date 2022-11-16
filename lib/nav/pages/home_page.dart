@@ -11,14 +11,16 @@ class DrawerItem {
 
 class HomePage extends StatefulWidget {
   final drawerItems = [
-    new DrawerItem("Fragment 1", Icons.rss_feed),
-    new DrawerItem("Fragment 2", Icons.local_pizza),
-    new DrawerItem("Fragment 3", Icons.info)
+    DrawerItem("Task Page", Icons.task),
+    DrawerItem("User Page", Icons.verified_user),
+    DrawerItem("Information", Icons.info)
   ];
+
+  HomePage({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return new HomePageState();
+    return HomePageState();
   }
 }
 
@@ -28,14 +30,14 @@ class HomePageState extends State<HomePage> {
   _getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
-        return new Challenge02_01();
+        return Challenge02_01();
       case 1:
-        return new Challenge03();
+        return Challenge03();
       case 2:
-        return new ThirdFragment();
+        return ThirdFragment();
 
       default:
-        return new Text("Error");
+        return Text("Error");
     }
   }
 

@@ -8,6 +8,9 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:portfolio/login_screen.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/model/user.dart';
+import 'package:portfolio/nav/fragments/first_fragment.dart';
+import 'package:portfolio/nav/fragments/second_fragment.dart';
+import 'package:portfolio/nav/fragments/third_fragment.dart';
 import 'package:portfolio/page/edit_profile_page.dart';
 import 'package:portfolio/utils/user_preferences.dart';
 import 'package:portfolio/widget/appbar_widget.dart';
@@ -16,16 +19,62 @@ import 'package:portfolio/widget/numbers_widget.dart';
 import 'package:portfolio/widget/profile_widget.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
+class DrawerItem {
+  String title;
+  IconData icon;
+  DrawerItem(this.title, this.icon);
+}
+
 class ProfilePage extends StatefulWidget {
+  final drawerItems = [
+    DrawerItem("Task Page", Icons.task),
+    DrawerItem("User Page", Icons.verified_user),
+    DrawerItem("Information", Icons.info)
+  ];
+
+  ProfilePage({super.key});
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
   double value = 0;
+  int _selectedDrawerIndex = 0;
+
+  _getDrawerItemWidget(int pos) {
+    switch (pos) {
+      case 0:
+        return Challenge02_01();
+      case 1:
+        return Challenge03();
+      case 2:
+        return ThirdFragment();
+
+      default:
+        return Text("Error");
+    }
+  }
+
+  _onSelectItem(int index) {
+    setState(() => _selectedDrawerIndex = index);
+    Navigator.of(context).pop(); // close the drawer
+  }
+
+  //
   @override
   Widget build(BuildContext context) {
     final user = UserPreferences.getUser();
+    //
+    List<Widget> drawerOptions = [];
+    for (var i = 0; i < widget.drawerItems.length; i++) {
+      var d = widget.drawerItems[i];
+      drawerOptions.add(ListTile(
+        leading: Icon(d.icon),
+        title: Text(d.title),
+        selected: i == _selectedDrawerIndex,
+        onTap: () => _onSelectItem(i),
+      ));
+    }
 
     return ThemeSwitchingArea(
       child: Builder(
@@ -145,7 +194,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         //Handle button tap
                       },
                     ),
-                    appBar: buildAppBar(context),
+                    appBar: buildAppBar(
+                      context,
+                    ),
                     body: ListView(
                       physics: BouncingScrollPhysics(),
                       children: [
@@ -169,57 +220,6 @@ class _ProfilePageState extends State<ProfilePage> {
                         Center(child: buildUpgradeButton()),
                       ],
                     ),
-
-                    //     ZoomDrawer(
-                    //   controller: _drawerController,
-                    //   style: DrawerStyle.Style1,
-                    //   menuScreen: MenuScreen(),
-                    //   mainScreen: MainScreen(),
-                    //   borderRadius: 24.0,
-                    //   showShadow: true,
-                    //   angle: 0.0,
-                    //   backgroundColor: Colors.grey[300],
-                    //   slideWidth: MediaQuery.of(context).size.width *
-                    //       (ZoomDrawer.isRTL() ? .45 : 0.65),
-                    //   openCurve: Curves.fastOutSlowIn,
-                    //   closeCurve: Curves.bounceIn,
-                    // ),
-
-                    // drawer: Drawer(
-                    //   //drawer: It is a slider panel that is displayed at the side of the body. Usually, it is hidden on the mobile devices, but the user can swipe it left to right or right to left to access the drawer menu. It uses the Drawer widget properties slides in a horizontal direction from the Scaffold edge to show navigation links in the application. An appropriate icon for the drawer is set automatically in an appBar property. The gesture is also set automatically to open the drawer.
-                    //   elevation: 10.0,
-                    //   child: Column(children: const <Widget>[
-                    //     UserAccountsDrawerHeader(
-                    //       //DrawerHeader is used to modify the header of the panel. In header we can display icon or details of user according to the application
-                    //       accountName: Text('Mujahid'),
-                    //       accountEmail: Text('mujahid30390@gmail.com'),
-                    //       currentAccountPicture: CircleAvatar(
-                    //         backgroundColor: Colors.black,
-                    //         child: Text('M'),
-                    //       ),
-                    //     ),
-                    //     ListTile(
-                    //       //ListTile to add the list items in the menu.
-                    //       title: Text('Inbox'),
-                    //       leading: Icon(Icons.mail),
-                    //     ),
-                    //     Divider(
-                    //       height: 0.2,
-                    //     ),
-                    //     ListTile(
-                    //       title: Text('Primary'),
-                    //       leading: Icon(Icons.inbox),
-                    //     ),
-                    //     ListTile(
-                    //       title: Text('Social'),
-                    //       leading: Icon(Icons.people),
-                    //     ),
-                    //     ListTile(
-                    //       title: Text('Promotions'),
-                    //       leading: Icon(Icons.local_offer),
-                    //     ),
-                    //   ]),
-                    // ),
                   ),
                 ));
               },
