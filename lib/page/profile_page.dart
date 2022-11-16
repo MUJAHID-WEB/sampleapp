@@ -9,7 +9,6 @@ import 'package:portfolio/login_screen.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/model/user.dart';
 import 'package:portfolio/page/edit_profile_page.dart';
-import 'package:portfolio/page2.dart';
 import 'package:portfolio/utils/user_preferences.dart';
 import 'package:portfolio/widget/appbar_widget.dart';
 import 'package:portfolio/widget/button_widget.dart';

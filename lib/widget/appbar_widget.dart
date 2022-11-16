@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:portfolio/page1.dart';
+
 import 'package:portfolio/themes.dart';
 import 'package:portfolio/utils/user_preferences.dart';
 

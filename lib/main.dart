@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:portfolio/map/home_screen.dart';
+
 import 'package:portfolio/nav/pages/home_page.dart';
 import 'package:portfolio/splash_screen.dart';
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:portfolio/themes.dart';
 import 'package:portfolio/utils/user_preferences.dart';
 import 'package:get/get.dart';
-
-import 'zoomdrawer/drawer_screen.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

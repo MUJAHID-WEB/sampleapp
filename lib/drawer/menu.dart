@@ -2,8 +2,6 @@ import 'dart:math';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-import '../page1.dart';
-
 class Menu extends StatefulWidget {
   const Menu({super.key});
 

@@ -28,9 +28,9 @@ class HomePageState extends State<HomePage> {
   _getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
-        return new FirstFragment();
+        return new Challenge02_01();
       case 1:
-        return new SecondFragment();
+        return new Challenge03();
       case 2:
         return new ThirdFragment();
 
@@ -49,26 +49,26 @@ class HomePageState extends State<HomePage> {
     List<Widget> drawerOptions = [];
     for (var i = 0; i < widget.drawerItems.length; i++) {
       var d = widget.drawerItems[i];
-      drawerOptions.add(new ListTile(
-        leading: new Icon(d.icon),
-        title: new Text(d.title),
+      drawerOptions.add(ListTile(
+        leading: Icon(d.icon),
+        title: Text(d.title),
         selected: i == _selectedDrawerIndex,
         onTap: () => _onSelectItem(i),
       ));
     }
 
-    return new Scaffold(
-      appBar: new AppBar(
+    return Scaffold(
+      appBar: AppBar(
         // here we display the title corresponding to the fragment
         // you can instead choose to have a static title
-        title: new Text(widget.drawerItems[_selectedDrawerIndex].title),
+        title: Text(widget.drawerItems[_selectedDrawerIndex].title),
       ),
-      drawer: new Drawer(
-        child: new Column(
+      drawer: Drawer(
+        child: Column(
           children: <Widget>[
-            new UserAccountsDrawerHeader(
-                accountName: new Text("John Doe"), accountEmail: null),
-            new Column(children: drawerOptions)
+            UserAccountsDrawerHeader(
+                accountName: Text("John Doe"), accountEmail: null),
+            Column(children: drawerOptions)
           ],
         ),
       ),
