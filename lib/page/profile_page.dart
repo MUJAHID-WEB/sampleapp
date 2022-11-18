@@ -182,7 +182,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ..rotateY((pi / 6) * val),
                   child: Scaffold(
                     bottomNavigationBar: CurvedNavigationBar(
-                      backgroundColor: Colors.grey.shade900,
+                      backgroundColor: Colors.white,
                       color: Colors.grey.shade800,
                       animationDuration: Duration(milliseconds: 500),
                       items: <Widget>[
